@@ -8,6 +8,7 @@ export default function Layout({ children }) {
   return (
     <>
       <Head>
+        <link rel="icon" href="/Rs-logo.png"  />
         <title>Real Estate</title>
       </Head>
       <Box maxWidth='1280px' m='auto' p='auto'>
