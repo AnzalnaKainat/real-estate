@@ -47,8 +47,8 @@ export default function SearchFilters() {
   return (
     <Flex bg='gray.100' p='4' justifyContent='center' flexWrap='wrap'>
       {filters?.map((filter) => (
-        <Box key={filter.queryName}>
-          <Select onChange={(e) => searchProperties({ [filter.queryName]: e.target.value })} placeholder={filter.placeholder} w='fit-content' p='2' >
+        <Box key={filter.queryName} >
+          <Select fontSize={['sm','md','lg']} onChange={(e) => searchProperties({ [filter.queryName]: e.target.value })} placeholder={filter.placeholder} w='fit-content' p='2' >
             {filter?.items?.map((item) => (
               <option value={item.value} key={item.value}>
                 {item.name}
@@ -58,7 +58,7 @@ export default function SearchFilters() {
         </Box>
       ))}
       <Flex flexDir='column'>
-        <Button onClick={() => setShowLocations(!showLocations)} border='1px' borderColor='gray.200' marginTop='2' >
+        <Button onClick={() => setShowLocations(!showLocations)} fontSize={['sm', 'md', 'lg']} border='1px' borderColor='gray.200' marginTop='2' >
           Search Location
         </Button>
         {showLocations && (
@@ -101,7 +101,7 @@ export default function SearchFilters() {
                 {!loading && !locationData?.length && (
                   <Flex justifyContent='center' alignItems='center' flexDir='column' marginTop='5' marginBottom='5' >
                     <Image src={noresult} alt={""} />
-                    <Text fontSize='xl' marginTop='3'>
+                    <Text fontSize={['lg', 'xl']} marginTop='3'>
                       Waiting to search!
                     </Text>
                   </Flex>

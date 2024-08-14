@@ -13,7 +13,7 @@ const PropertyDetails = ({ propertyDetails: { price, rentFrequency, rooms, title
     <Box w='full' p='6'>
       <Flex paddingTop='2' alignItems='center'>
         <Box paddingRight='3' color='green.400'>{isVerified && <GoVerified />}</Box>
-        <Text fontWeight='bold' fontSize='lg'>
+        <Text fontWeight='bold' fontSize={['md', 'lg']}>
           AED {price} {rentFrequency && `/${rentFrequency}`}
         </Text>
         <Spacer />
@@ -24,11 +24,11 @@ const PropertyDetails = ({ propertyDetails: { price, rentFrequency, rooms, title
       </Flex>
     </Box>
     <Box marginTop='2'>
-      <Text fontSize='lg' marginBottom='2' fontWeight='bold'>{title}</Text>
-      <Text lineHeight='2' color='gray.600'>{description}</Text>
+      <Text fontSize={['md', 'lg']} marginBottom='2' fontWeight='bold'>{title}</Text>
+      <Text lineHeight='2' color='gray.600' fontSize={['md', 'lg']}>{description}</Text>
     </Box>
-    <Flex flexWrap='wrap' textTransform='uppercase' justifyContent='space-between'>
-      <Flex justifyContent='space-between' w='400px' borderBottom='1px' borderColor='gray.100' p='3'>
+    <Flex flexWrap='wrap' textTransform='uppercase' justifyContent='space-between' >
+      <Flex fontSize={['md', 'lg']} justifyContent='space-between' w='400px' borderBottom='1px' borderColor='gray.100' p='3'>
         <Text>Type</Text>
         <Text fontWeight='bold'>{type}</Text>
       </Flex>
@@ -44,11 +44,11 @@ const PropertyDetails = ({ propertyDetails: { price, rentFrequency, rooms, title
       )}
     </Flex>
     <Box>
-      {amenities.length && <Text fontSize='2xl' fontWeight='black' marginTop='5'>Facilites:</Text>}
+      {amenities.length && <Text fontSize={['lg', '2xl']} fontWeight='black' marginTop='5'>Facilites:</Text>}
         <Flex flexWrap='wrap'>
           {amenities?.map((item) => (
               item?.amenities?.map((amenity) => (
-                <Text key={amenity.text} fontWeight='bold' color='blue.400' fontSize='l' p='2' bg='gray.200' m='1' borderRadius='5'>
+                <Text key={amenity.text} fontWeight='bold' color='blue.400' fontSize={['md', 'lg']} p='2' bg='gray.200' m='1' borderRadius='5'>
                   {amenity.text}
                 </Text>
               ))
